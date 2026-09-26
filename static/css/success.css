@@ -1,0 +1,63 @@
+/* Design für die Erfolgsmeldung nach dem Absenden eines Formulars, geschrieben von KI, hinterher angepasst */
+/* Haupt-Container als zentrierte Karte */
+.main_section {
+    width: 90%;
+    max-width: 480px;
+    margin: 60px auto;
+    padding: 35px 25px;
+    background-color: var(--background_light);
+    border: 1px solid var(--primary);
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Erfolgsmeldung Text */
+.main_section p {
+    margin: 0 0 10px 0;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--text_dark);
+    line-height: 1.4;
+}
+
+/* Generiert automatisch ein Häkchen-Icon über dem Text */
+.main_section p::before {
+    content: "✓";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary);
+    color: var(--accent);
+    border: 1px solid var(--primary);
+    border-radius: 50%;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0 auto 15px auto;
+}
+
+/* Links als Pill-Buttons stylen */
+.main_section a {
+    display: block;
+    width: 100%;
+    max-width: 260px;
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: bold;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+.home_button {
+    background-color: var(--background);
+    color: var(--text_dark);
+}

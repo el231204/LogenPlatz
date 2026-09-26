@@ -1,0 +1,102 @@
+<link rel="stylesheet" href="/static/css/search.css">
+
+<search class="search">
+    <form action="/search_results" method="get" class="search_section">
+
+        <input type="text" name="search_bar" id="search_bar" placeholder="Suchbegriff eingeben">
+
+        <div class="filter_section">
+            <label for="genre">Genre:</label>
+            <label for="location">Ort:</label>
+            <label for="date">Datum:</label>
+            <label for="dress_code">Dress Code:</label>
+            <label for="category">Kategorie:</label>
+
+            <select class="filter_button" name="genre" id="genre">
+                <option value="" selected>Keine</option>
+                <option value="klassik">Klassik</option>
+                <option value="jazz">Jazz</option>
+                <option value="oper">Oper</option>
+                <option value="operette">Operette</option>
+                <option value="modern">Modern</option>
+                <option value="comedy">Comedy</option>
+                <option value="drama">Drama</option>
+                <option value="pop">Pop</option>
+                <option value="kinderstück">Kinderstück</option>
+                <option value="rock">Rock</option>
+                <option value="folk">Folk</option>
+                <option value="variety">Variety</option>
+                <option value="musical">Musical</option>
+                <option value="techno">Techno</option>
+                <option value="blues">Blues</option>
+            </select>
+
+            <select class="filter_button" name="location" id="location">
+                <option value="" selected>Keine</option>
+                <option value="berlin">Berlin</option>
+                <option value="hamburg">Hamburg</option>
+                <option value="münchen">München</option>
+                <option value="köln">Köln</option>
+                <option value="stuttgart">Stuttgart</option>
+                <option value="dresden">Dresden</option>
+                <option value="karlsruhe">Karlsruhe</option>
+                <option value="halle">Halle</option>
+                <option value="leipzig">Leipzig</option>
+                <option value="frankfurt">Frankfurt</option>
+                <option value="düsseldorf">Düsseldorf</option>
+                <option value="wien">Wien</option>
+            </select>
+
+            <input class="filter_button" type="date" id="date" name="date">
+
+            <select class="filter_button" name="dress_code" id="dress_code">
+                <option value="" selected>Keine</option>
+                <option value="abendgarderobe">Abendgarderobe</option>
+                <option value="business">Business</option>
+                <option value="casual">Casual</option>
+                <option value="freizeit">Freizeit</option>
+                <option value="business casual">Business Casual</option>
+                <option value="black tie">Black Tie</option>
+                <option value="tracht">Tracht</option>
+            </select>
+
+            <select class="filter_button" name="category" id="category">
+                <option value="" selected>Keine</option>
+                <option value="sport">Sport</option>
+                <option value="ballett">Ballett</option>
+                <option value="theater">Theater</option>
+                <option value="musik">Musik</option>
+            </select>
+        </div>
+
+        <button class="search_button" type="submit" onclick="logSearchButton()">Suchen</button>
+    </form>
+</search>
+
+<!-- Skript zum Wiederherstellen der Formularwerte aus den URL-Parametern, geschrieben von KI -->
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        // 1. Grab the query parameters from the current URL
+        const urlParams = new URLSearchParams(window.location.search);
+
+        // 2. Define a list of your form fields: [URL_Parameter_Name, HTML_Element_ID]
+        const formFields = [
+            ['search_bar', 'search_bar'],
+            ['genre', 'genre'],
+            ['location', 'location'],
+            ['date', 'date'],
+            ['dress_code', 'dress_code'],
+            ['category', 'category']
+        ];
+
+        // 3. Loop through them and restore their values
+        formFields.forEach(([paramName, elementId]) => {
+            const element = document.getElementById(elementId);
+
+            // If the element exists on this page and the URL actually contains this parameter
+            if (element && urlParams.has(paramName)) {
+                element.value = urlParams.get(paramName);
+            }
+        });
+    });
+</script>

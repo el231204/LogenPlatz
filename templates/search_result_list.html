@@ -1,0 +1,34 @@
+<link rel="stylesheet" type="text/css" href="/static/css/search_result_list.css">
+
+<div class="result_list">
+
+    {% if events %}
+
+    {% for event in events %}
+    <div class="card">
+        <div class="card_body">
+            <div class="card_header">
+                <h3>{{ event.title }}</h3>
+                <span class="event_date">{{ event.date }}</span>
+            </div>
+
+            <div class="card_details">
+                <p> {{ event.location }}</p>
+                <p><strong>Genre:</strong> {{ event.genre }}</p>
+                <p><strong>Kleiderordnung:</strong> {{ event.dress_code }}</p>
+                <p><strong>Kategorie:</strong> {{ event.type }}</p>
+            </div>
+        </div>
+
+        <div class="card_button_section">
+            <button class="favorite" type="button" data-event-id="{{ event.id }}">❤︎</button>
+            <a href="{{ url_for('details', event_id=event.id, **request.args.to_dict()) }}"
+                onclick="logBookButton({{ event.id }})">Mehr Infos</a>
+        </div>
+
+    </div>
+    {% endfor %}
+    {% else %}
+    {% include 'no_results.html' %}
+    {% endif %}
+</div>

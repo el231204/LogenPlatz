@@ -1,0 +1,9 @@
+.card_body {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.card_button_section {
+    gap: 12px;
+}

@@ -1,0 +1,69 @@
+.main_section {
+    margin-top: 20px;
+}
+
+.search_section {
+    gap: 20px;
+    margin: 10px;
+}
+
+#search_bar {
+    padding: 12px 20px;
+    margin: 10px;
+}
+
+.filter_section {
+    gap: 5px 20px;
+    margin: 10px;
+    grid-column: span 2;
+}
+
+.search_button {
+    margin: 10px;
+    font-size: 1rem;
+    grid-column: span 2;
+}
+
+.filter_button,
+.filter_button::picker(select) {
+    font-size: 14px;
+}
+
+.filter_button::picker(select) {
+    padding: 10px;
+}
+
+.result_list {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin: 10px;
+}
+
+.card {
+    padding: 15px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+    align-items: start;
+    gap: 2px;
+}
+
+.card_header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+}
+
+.event_date {
+    padding-top: 5px;
+    justify-self: flex-end;
+}
+
+.card_details {
+    gap: 5px;
+}
+
+.card_button_section {
+    padding-top: 5px;
+}

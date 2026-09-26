@@ -1,0 +1,40 @@
+.main_section {
+    width: 90%;
+    max-width: 900px;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.card {
+    width: 100%;
+    padding: 20px 25px;
+    grid-template-columns: 1fr auto;
+    gap: 20px;
+}
+
+.event_date {
+    padding: 4px 12px;
+}
+
+.card_details {
+    gap: 6px;
+    font-size: 0.95rem;
+}
+
+.price {
+    margin-left: 10px;
+}
+
+.total_price {
+    font-size: 1.2rem;
+    margin-top: 20px;
+    align-self: flex-end;
+}
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.1;
+}

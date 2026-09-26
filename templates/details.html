@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Details</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/details.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/search_small.css">
+    <script rel="script" type="text/javascript" src="/static/script/client_event_log.js"></script>
+</head>
+
+<body class="{{ condition }}">
+
+    {% include 'navigation.html' %}
+
+    <div class="main_section">
+
+        {% include 'search.html' %}
+
+        <div class="card">
+            <div class="card_body">
+                <div class="card_header">
+                    <div>
+                        <h3>{{ event.title }}</h3>
+                        <p class="location">{{ event.location }}</p>
+                    </div>
+                    <div>
+                        <span class="event_date">{{ event.date }}, {{ event.time }} Uhr</span>
+                    </div>
+                </div>
+
+                <div class="card_details">
+                    <div class="detail_grid">
+                        <div class="detail_item">
+                            <strong>Genre</strong>
+                            {{ event.genre }}
+                        </div>
+                        <div class="detail_item">
+                            <strong>Kleiderordnung</strong>
+                            {{ event.dress_code }}
+                        </div>
+                        <div class="detail_item">
+                            <strong>Kategorie</strong>
+                            {{ event.type }}
+                        </div>
+                        <div class="detail_item">
+                            <strong>Ensamble</strong>
+                            {{ event.ensamble }}
+                        </div>
+                        <div class="detail_item">
+                            <strong>Künstler</strong>
+                            {{ event.artist }}
+                        </div>
+                        <div class="detail_item">
+                            <strong>Kindgerecht</strong>
+                            {{ event.child_friendly }}
+                        </div>
+                    </div>
+                    <p class="event_description">{{ event.description }}</p>
+                </div>
+            </div>
+
+            <div class="card_button_section">
+                {% if event.state == "few_remaining" %}
+                <p class="few_remaining">Nur noch wenige Tickets verfügbar!</p>
+                {% endif %}
+                <p><strong>Preis:</strong> {{ event.price }} €</p>
+                <button class="favorite" type="button" data-event-id="{{ event.id }}">❤︎</button>
+                <form action="{{ url_for('add_to_basket', **request.args.to_dict()) }}" method="post">
+                    <input type="hidden" name="event_id" value="{{ event.id }}">
+                    <button type="submit" onclick="logBookButton()">Buchen</button>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

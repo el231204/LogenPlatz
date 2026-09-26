@@ -1,0 +1,57 @@
+.search_section {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr auto;
+}
+
+#search_bar {
+    background-color: var(--background_light);
+    border: 1px solid var(--primary);
+    border-radius: 50px;
+    font-size: 1rem;
+    outline: none;
+    text-align: center;
+    grid-column: span 2;
+}
+
+#search_bar:focus {
+    border-color: var(--accent);
+    color: var(--text_dark);
+}
+
+.filter_section {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-content: center;
+}
+
+.filter_button,
+.search_button {
+    padding: 10px;
+}
+
+.filter_button {
+    background-color: var(--primary);
+    border: none;
+    border-radius: 50px;
+}
+
+.filter_button,
+.filter_button::picker(select) {
+    appearance: base-select;
+    color: var(--text_light);
+}
+
+.filter_button::picker(select) {
+    background-color: var(--primary);
+    border: none;
+    color: var(--text_light);
+    cursor: pointer;
+}
+
+.filter_button:hover,
+.filter_button option:hover,
+.filter_button option:checked {
+    background-color: var(--secondary);
+    color: var(--text_light);
+}

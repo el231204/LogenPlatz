@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warenkorb</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/basket.css">
+    <script rel="script" type="text/javascript" src="/static/script/client_event_log.js"></script>
+</head>
+
+<body class="{{ condition }}">
+
+    {% include 'navigation.html' %}
+
+    <div class="main_section">
+        <h2>Dein Warenkorb</h2>
+
+        {% if basket %}
+
+        {% for event in basket %}
+        <div class="card">
+            <div class="card_body">
+                <div class="card_header">
+                    <h3>{{ event.title }}</h3>
+                    <span class="event_date">{{ event.date }}</span>
+                </div>
+
+                <div class="card_details">
+                    <p> {{ event.location }}</p>
+                    <p><strong>Genre:</strong> {{ event.genre }}</p>
+                    <p><strong>Kleiderordnung:</strong> {{ event.dress_code }}</p>
+                    <p><strong>Kategorie:</strong> {{ event.type }}</p>
+                </div>
+            </div>
+
+            <div class="card_button_section">
+                <button class="favorite" type="button" data-event-id="{{ event.id }}">❤︎</button>
+                <span class="price">{{ event.price }} €</span>
+            </div>
+
+        </div>
+
+        {% endfor %}
+        <div class="total_price">
+            Summe: <strong>{{ total_price }} €</strong>
+        </div>
+        <a href="{{ url_for('complete_order') }}" onclick="logOrderButton()">Jetzt bestellen</a>
+        {% else %}
+        {% include 'no_results.html' %}
+        <a class="disabled" href="{{ url_for('complete_order') }}" onclick="logOrderButton()">Jetzt bestellen</a>
+        {% endif %}
+
+    </div>
+
+</body>
+
+</html>

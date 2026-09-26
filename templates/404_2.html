@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Seite nicht gefunden</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/404.css">
+    <script rel="script" type="text/javascript" src="/static/script/client_event_log.js"></script>
+</head>
+
+<body class="{{ condition }}">
+
+    {% include 'navigation.html' %}
+
+    <div class="main_section">
+
+        <div class="cardWrap">
+            <div class="card cardLeft">
+                <h1>Diese Vorstellung fällt aus</h1>
+
+                <div class="title">
+                    <h2>Wir konnten dieses Programm nicht finden. Vielleicht wurde
+                        die Seite abgesetzt oder hatte einfach noch nicht ihre Premiere.</h2>
+                    <span>Status</span>
+                </div>
+                <div class="name">
+                    <h2>Auf der Startseite läuft garantiert etwas für dich.</h2>
+                    <span>Alternative</span>
+                </div>
+                <div>
+                    <div class="seat">
+                        <h2>404</h2>
+                        <span>Platz</span>
+                    </div>
+                    <div class="time">
+                        <h2>Diese Rolle wurde nie besetzt.</h2>
+                        <span>Darsteller</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="card cardRight">
+                <div class="eye"></div>
+                <div class="number">
+                    <h3>404</h3>
+                    <span>Platz</span>
+                </div>
+                <a href="/home" onclick="logHomeButton()">Zur Startseite</a>
+            </div>
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>

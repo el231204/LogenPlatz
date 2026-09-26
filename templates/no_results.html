@@ -1,0 +1,19 @@
+<div class="no_results">
+
+    {% if condition == "error_design_1" %}
+    <p> leer </p>
+
+    {% elif condition == "error_design_2" %}
+
+    {% if request.endpoint == "search_results" %}
+    <p>Keine passenden Events gefunden. Bitte passe deine Filter an.</p>
+
+    {% elif request.endpoint == "basket_page" %}
+    <p>Dein Warenkorb ist leer.</p>
+
+    {% endif %}
+
+    {% endif %}
+
+
+</div>

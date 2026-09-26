@@ -1,0 +1,40 @@
+.header {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 8fr 1fr;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--primary);
+    box-shadow: 0 2px 10px var(--primary);
+}
+
+.logo_button {
+    border: none;
+    background: none;
+    padding: 0px;
+}
+
+.logo_button img {
+    margin-left: 7px;
+    height: 80px;
+    border-radius: 50px;
+}
+
+.logo_button:hover {
+    background: none;
+}
+
+.navigation {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.nav-button {
+    aspect-ratio: 1/1;     /* height = width */
+    max-height: 80px;
+    max-width: 80px;
+    border: 2px solid var(--background);
+}

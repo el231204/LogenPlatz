@@ -1,0 +1,40 @@
+.search {
+    width: 90%;
+    max-width: 1200px;
+    position: sticky;
+    top: 120px;
+    z-index: 50;
+    background-color: var(--background);
+    padding-top: 20px;
+}
+
+.search_section {
+    width: 100%;
+    gap: 10px;
+    margin: 5px;
+    margin-top: 0px;
+}
+
+#search_bar {
+    padding: 10px 18px;
+    margin: 5px;
+}
+
+.filter_section {
+    gap: 2px 10px;
+    margin: 5px;
+}
+
+.search_button {
+    margin: 5px;
+    margin-top: 10px;
+}
+
+.filter_button,
+.filter_button::picker(select) {
+    font-size: 13px;
+}
+
+.filter_button::picker(select) {
+    padding: 5px;
+}

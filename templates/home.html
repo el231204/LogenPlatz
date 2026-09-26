@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startseite</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/home.css">
+    <script rel="script" type="text/javascript" src="/static/script/client_event_log.js"></script>
+</head>
+
+<body class="{{ condition }}">
+
+    {% include 'navigation.html' %}
+
+    <div class="main_section">
+
+        {% include 'search.html' %}
+
+        {% include 'search_result_list.html' %}
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<link rel="stylesheet" type="text/css" href="/static/css/navigation.css">
+<link rel="stylesheet" href="/static/css/{{ condition }}.css">
+<script src="/static/script/favorites.js"></script>
+
+<div class="header">
+  <a href="/home" class="logo_button" onclick="logHomeNavButton()">
+    <img src="/static/images/logo.png" alt="Logo">
+  </a>
+
+  <h1>Willkommen bei LogenPlatz!</h1>
+
+  <nav class="navigation">
+    <!-- SVG-Icons für die Buttons von KI generiert -->
+    <a href="/favorites" class="nav-button" onclick="logFavoriteNavButton()">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M12 21C12 21 3 14 3 8.5C3 5.5 5.5 3 8.5 3C10.5 3 12 4.5 12 6.5C12 4.5 13.5 3 15.5 3C18.5 3 21 5.5 21 8.5C21 14 12 21 12 21Z"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </a>
+    <a href="/basket" class="nav-button" onclick="logBasketNavButton()">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M3 3H5L5.4 5M7 13H17L21 5H5.4M7 13L5.4 5M7 13L4.7 15.3C4.1 15.9 4.5 17 5.4 17H17M17 17C15.9 17 15 17.9 15 19C15 20.1 15.9 21 17 21C18.1 21 19 20.1 19 19C19 17.9 18.1 17 17 17ZM9 19C9 20.1 8.1 21 7 21C5.9 21 5 20.1 5 19C5 17.9 5.9 17 7 17C8.1 17 9 17.9 9 19Z"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </a>
+  </nav>
+
+  <!-- Flash Nachrichten mit Hilfe von KI geschrieben -->
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+  <!-- Fullscreen overlay background -->
+  <div class="flash-overlay" id="flashOverlay">
+    {% for message in messages %}
+    <!-- Centered popup modal -->
+    <div class="flash-modal">
+      <div class="flash-icon">&#9888;</div>
+      <div class="flash-content">
+        {% if message.title %}
+        <h3 class="flash-title">{{ message.title }}</h3>
+        {% endif %}
+        {% for paragraph in message.paragraphs %}
+        <p>{{ paragraph }}</p>
+        {% endfor %}
+      </div>
+      <div class="flash-actions">
+        <a href="{{ url_for('search_results', **request.args.to_dict()) }}" onclick="logModalSearchButton()">Zurück zur
+          Suche</a>
+        <a href="/home" class="home_button" onclick="logModalHomeButton()">Zur Startseite</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+  {% endwith %}
+
+</div>

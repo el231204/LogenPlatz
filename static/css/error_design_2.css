@@ -1,0 +1,113 @@
+/* Design für Flash Nachrichten geschrieben von KI, hinterher angepasst */
+/* Fullscreen semi-transparent backdrop */
+.flash-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Etwas sanfterer Hintergrund */
+  backdrop-filter: blur(4px);
+  /* Weicher Unschärfe-Effekt */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* Centered Modal Card */
+.flash-modal {
+  position: relative;
+  background-color: var(--background);
+  border: 5px solid var(--accent);
+  color: var(--text_dark);
+  padding: 30px 28px 24px 28px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  max-width: 420px;
+  width: 85%;
+  text-align: center;
+  animation: popIn 0.25s ease-out;
+}
+
+.flash-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: var(--warning_soft);
+  border: 2px solid var(--warning);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  color: var(--warning);
+}
+
+/* Message text area */
+.flash-content {
+  font-size: 1.05rem;
+  line-height: 1.5;
+  margin: 15px 0 22px 0;
+  word-wrap: break-word;
+  color: var(--text_dark);
+}
+
+.flash-content p {
+  margin-bottom: 10px;
+}
+
+.flash-actions {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.home_button {
+  background: transparent;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+}
+
+/* Entrance Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.88);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Inline Meldungen für keine Ergebnisse */
+.no_results {
+  width: 100%;
+  background-color: var(--background_light);
+  border: 1px dashed var(--primary);
+  border-radius: 20px;
+  padding: 40px 20px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.no_results p {
+  margin: 0;
+  font-size: 1.05rem;
+  color: var(--text_dark);
+}
