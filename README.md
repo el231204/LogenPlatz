@@ -7,7 +7,7 @@ im Studiengang Wirtschaftsinformatik B.Sc.
 
 an der Hochschule für Wirtschaft und Recht Berlin
 
-im Somersemester 2026
+im Somersemester 2026 / Wintersemester 2026
 
 Eingereicht am ...
 
