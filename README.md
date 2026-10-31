@@ -67,14 +67,14 @@ Die App dient somit ausschließlich der kontrollierten Datenerhebung im Rahmen d
 #### Nun können Sie LogenPlatz ausführen.
 - Starten Sie die App im gleichen Terminal. Dabei müssen Sie die Participant_Id fürs Loggig und die Condition für das gewählte Fehlerdesign mitgeben:
 - Sie können die Participant_Id beliebig anpassen. Für die Condition wählen Sie zwischen error_design_1 und error_design_2.
-- Achten sie darauf, dass nach den Variablen keine Leerzeichen eingegeben sind.
+- Achten Sie darauf, dass nach den Variablen keine Leerzeichen eingegeben sind.
 > set PARTICIPANT_ID=1_test&& set CONDITION=error_design_2&& flask run
-- Öffnen sie anschließend im Browser http://127.0.0.1:5000/ um LogenPlatz zu starten. Sie sollten nun auf der Startseite sein und mit der Suche beginnen können.
+- Öffnen Sie anschließend im Browser http://127.0.0.1:5000/ um LogenPlatz zu starten. Sie sollten nun auf der Startseite sein und mit der Suche beginnen können.
 
 ### Problemlösung
 Falls Sie auf Probleme stoßen, überprüfen Sie die folgenden Punkte:
 - Stellen Sie sicher, dass alle Abhängigkeiten korrekt installiert sind.
 - Stellen Sie sicher, dass die virtuelle Umgebung aktiviert ist.
-- Setzen sie app.py manuell als FLASK_APP, falls die App nicht startet
+- Setzen Sie app.py manuell als FLASK_APP, falls die App nicht startet
 > set FLASK_APP=home.py
 - Stellen Sie sicher, dass die log-Datei existiert, jedoch nicht geöffnet ist.
