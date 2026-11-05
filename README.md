@@ -9,9 +9,9 @@ an der Hochschule für Wirtschaft und Recht Berlin
 
 im Somersemester 2026 / Wintersemester 2026
 
-Eingereicht am ...
+Eingereicht am 05.11.2026
 
-von Eliana Kaping (Matrikelnummer: 77211973055 , GitHub: el231204)
+von Eliana Kaping (GitHub: el231204)
 
 
 Erstgutachterin: Prof. Dr. Fatoumata Camara
